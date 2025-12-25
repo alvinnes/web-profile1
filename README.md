@@ -1,73 +1,96 @@
-# React + TypeScript + Vite
+# Alvinity 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Alvinity** is a premium, high-performance portfolio website built with **React**, **TypeScript**, and **Vite**. It features modern UI/UX design with smooth animations, interactive 3D elements, and a glassmorphism aesthetic.
 
-Currently, two official plugins are available:
+![Landing Page Preview](https://github.com/alvinnes/web-profile1/raw/main/preview.png) _(Add your own preview image here)_
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## React Compiler
+- **Interactive 3D Elements**: Integration of Three.js (React Three Fiber) for immersive experiences like the Lanyard and ChromaGrid.
+- **Scroll-Animated Timeline**: A dynamic Education timeline that grows and glows as the user scrolls.
+- **Premium UI Components**: Custom-built components inspired by React Bits, including holographic Profile Cards and Laser Flow effects.
+- **Modern Tech Stack**: Built with React 19, Tailwind CSS 4, and Framer Motion for top-tier performance and aesthetics.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
+- **Interactive Tech Skills**: Dynamic skill sliders using Swiper.js.
+- **Professional Contact Form**: Integrated form with validation and backend connectivity.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+### Frontend
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework**: [React 19](https://react.dev/)
+- **Bundler**: [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [GSAP](https://gsap.com/) & [Framer Motion](https://www.framer.com/motion/)
+- **3D Graphics**: [Three.js](https://threejs.org/) & [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/) & [Lucide Icons](https://lucide.dev/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Backend
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Server**: [Express.js](https://expressjs.com/)
+- **Database**: MySQL (via [mysql2](https://github.com/sidorares/node-mysql2))
+- **Logic**: Node.js
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- MySQL Server
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/alvinnes/web-profile1.git
+   cd web-profile1
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Setup Environment Variables**
+   Create a `.env` file in the root directory and add your configurations (Database, API keys, etc.).
+
+4. **Run the Development Server**
+
+   ```bash
+   npm run dev
+   ```
+
+5. **Run the Backend Server**
+   ```bash
+   npm run server
+   ```
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/          # Reusable UI components
+│   ├── features/        # Section-specific components (About, Projects, etc.)
+│   ├── react-bits/      # Specialized animated components
+│   └── ui/              # Base UI elements
+├── layouts/             # Shared page layouts
+├── pages/               # Main page entries
+├── assets/              # Styles and images
+└── types/               # TypeScript interfaces
+app/                     # Backend Logic (Express.js)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🤝 Contributing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Contributions are welcome! Feel free to open an issue or submit a pull request if you have ideas to improve **Alvinity**.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+Created with ❤️ by [Alvinnes](https://github.com/alvinnes)
