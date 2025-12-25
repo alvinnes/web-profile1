@@ -1,0 +1,175 @@
+my-portfolio/
+├── client/                    # React Frontend
+│   ├── public/
+│   │   ├── favicon.ico
+│   │   └── assets/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── ui/           # shadcn components
+│   │   │   │   ├── button.tsx
+│   │   │   │   ├── card.tsx
+│   │   │   │   └── form.tsx
+│   │   │   ├── layout/
+│   │   │   │   ├── Header.tsx
+│   │   │   │   ├── Footer.tsx
+│   │   │   │   └── Navbar.tsx
+│   │   │   └── features/
+│   │   │       ├── portfolio/
+│   │   │       │   ├── ProjectCard.tsx
+│   │   │       │   └── ProjectList.tsx
+│   │   │       └── blog/
+│   │   │           ├── BlogPost.tsx
+│   │   │           └── BlogList.tsx
+│   │   ├── pages/
+│   │   │   ├── Home.tsx
+│   │   │   ├── About.tsx
+│   │   │   ├── Projects.tsx
+│   │   │   ├── Blog.tsx
+│   │   │   └── Contact.tsx
+│   │   ├── hooks/
+│   │   │   ├── useProjects.ts
+│   │   │   └── useBlogPosts.ts
+│   │   ├── services/
+│   │   │   ├── api.ts
+│   │   │   ├── projectService.ts
+│   │   │   └── blogService.ts
+│   │   ├── utils/
+│   │   │   ├── formatDate.ts
+│   │   │   └── constants.ts
+│   │   ├── types/
+│   │   │   ├── project.ts
+│   │   │   └── blog.ts
+│   │   ├── styles/
+│   │   │   ├── globals.css
+│   │   │   └── themes/
+│   │   ├── lib/
+│   │   │   └── utils.ts         # shadcn utils
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   └── vite-env.d.ts
+│   ├── .env
+│   ├── .env.example
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── vite.config.ts
+│   ├── tailwind.config.js
+│   ├── components.json          # shadcn config
+│   └── postcss.config.js
+│
+├── server/                     # Express Backend
+│   ├── src/
+│   │   ├── config/
+│   │   │   ├── database.js     # MySQL connection
+│   │   │   └── env.js
+│   │   ├── controllers/
+│   │   │   ├── authController.js
+│   │   │   ├── projectController.js
+│   │   │   └── blogController.js
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Project.js
+│   │   │   └── BlogPost.js
+│   │   ├── routes/
+│   │   │   ├── authRoutes.js
+│   │   │   ├── projectRoutes.js
+│   │   │   └── blogRoutes.js
+│   │   ├── middleware/
+│   │   │   ├── authMiddleware.js
+│   │   │   ├── errorHandler.js
+│   │   │   └── validator.js
+│   │   ├── services/
+│   │   │   ├── emailService.js
+│   │   │   └── uploadService.js
+│   │   ├── utils/
+│   │   │   ├── logger.js
+│   │   │   └── helpers.js
+│   │   ├── db/
+│   │   │   ├── migrations/
+│   │   │   └── seeds/
+│   │   ├── app.js
+│   │   └── server.js
+│   ├── .env
+│   ├── .env.example
+│   ├── package.json
+│   └── nodemon.json
+│
+├── shared/                     # Shared types/utils
+│   ├── types/
+│   │   ├── project.ts
+│   │   └── blog.ts
+│   └── constants/
+│
+├── .gitignore
+├── README.md
+└── package.json               # Root package.json untuk monorepo
+
+
+Contoh Penataan untuk Pelajar
+Skills Section:
+
+Frontend: HTML, CSS, JavaScript, React (Learning)
+
+Backend: Node.js, Express (Practicing)
+
+Database: MySQL (Basic Knowledge)
+
+Tools: Git, VS Code (Daily Use)
+
+Soft skills: Problem Solving, Learning independently, Team collaboration (school projects)
+
+Mini achievements:
+
+Completed freeCodeCamp Responsive Web Design certificate
+
+Built first React todo app as a practice project
+
+Collaborated in team coding project for school competition
+
+Motivation/goal snippet:
+
+"Actively learning full stack development and passionate about building real-world projects."
+
+"Eager to join communities, participate in hackathons, and improve coding skills every day."
+
+Optional — Learning roadmap:
+
+Next goals: Learn REST API, deploy a simple app to Netlify, explore database relations
+
+Example Wording (English):
+Tech Skills
+
+HTML, CSS, JavaScript (confident building projects)
+
+React (currently learning)
+
+Node.js, Express (experimenting with small projects)
+
+MySQL (practiced with basic CRUD)
+
+Git & GitHub (using for all my school code)
+
+Soft Skills
+
+Problem solving
+
+Quick learner
+
+Teamwork (coding groups in school)
+
+Self-motivated to explore new technologies
+
+Learning Achievements
+
+Completed freeCodeCamp Responsive Web Design
+
+Built first JavaScript calculator
+
+Contributed code in a group online mini-hackathon
+
+Learning Goals
+
+Make a full stack MERN project
+
+Publish my first app online
+
+Learn deployment and version control best practices
