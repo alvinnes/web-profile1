@@ -1,12 +1,23 @@
 import Animate from "@/components/ui/Animate";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
+import TrueFocus from "@/components/react-bits/TrueFocus";
 
 const TextAbout = () => {
   return (
-    <div className="sm:w-xl xs:w-full flex flex-col gap-3">
+    <div className="sm:w-xl w-11/12 xss:w-full flex flex-col gap-3">
       <Animate delay={0.2}>
-        <h2 className="text-3xl font-bold">About Me</h2>
+        {/* <h2 className="text-3xl font-bold">About Me</h2> */}
+      <div className="w-full relative text-sm flex">
+          <TrueFocus
+          sentence="I'm Fullstack Developer"
+          manualMode={false}
+          blurAmount={5}
+          borderColor="purple"
+          animationDuration={0.5}
+          pauseBetweenAnimations={1.5}
+        />
+      </div>
       </Animate>
       <Animate>
         <p className="font-light text-sm leading-5.5">
@@ -39,7 +50,7 @@ const TextAbout = () => {
       </Animate>
       <Animate delay={0.3}>
         <div className="flex gap-6 items-center mt-6">
-          <Button className="bg-white  text-[#1d1d1d] py-6 xs:px-6 px-12 font-bold hover:bg-white/75 transition-all duration-400">
+          <Button className="bg-white  text-[#1d1d1d] py-6 px-6 font-bold hover:bg-white/75 transition-all duration-400">
             Read More
           </Button>
           <Button variant="link" className="text-white  font-light">

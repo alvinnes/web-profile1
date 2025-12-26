@@ -13,42 +13,42 @@ const sidebarItem: SidebarItem[] = [
   {
     name: "About",
     link: "#about",
-    icon: "ri:home-5-line",
+    icon: "ri:user-5-line",
   },
   {
     name: "Skills",
     link: "#skills",
-    icon: "ri:home-5-line",
+    icon: "ri:tools-line",
   },
   {
     name: "Education",
     link: "#education",
-    icon: "ri:home-5-line",
+    icon: "ri:book-read-line",
   },
   {
     name: "Certifications",
     link: "#certifications",
-    icon: "ri:home-5-line",
+    icon: "ri:award-line",
   },
   {
     name: "Projects",
     link: "#projects",
-    icon: "ri:home-5-line",
+    icon: "ri:code-s-slash-line",
   },
   {
     name: "Activities",
     link: "#activities",
-    icon: "ri:home-5-line",
+    icon: "ri:calendar-event-line",
   },
   {
     name: "Blogs",
     link: "#blogs",
-    icon: "ri:home-5-line",
+    icon: "ri:article-line",
   },
   {
     name: "Contact",
     link: "#contact",
-    icon: "ri:home-5-line",
+    icon: "ri:mail-send-line",
   },
 ];
 

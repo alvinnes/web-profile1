@@ -17,13 +17,13 @@ const TechSkillsLayout = ({
   return (
     <Animate>
       <div className="w-full">
-        <h3 className="font-bold text-xl mb-2 bg-white/10 text-indigo-400 w-fit py-3 rounded-full">
+        <h3 className="font-bold text-xl mb-4 px-4 bg-white/15 text-indigo-400 w-fit py-3 rounded-full">
           {title}
         </h3>
         <Swiper
           slidesPerView={4}
           watchSlidesProgress={true}
-          className="flex gap-6 sm:gap-4"
+          className="flex sm:gap-4"
           spaceBetween={0}
           autoplay={{ delay, pauseOnMouseEnter: true }}
           modules={[Autoplay]}
@@ -33,9 +33,11 @@ const TechSkillsLayout = ({
             },
             414: {
               slidesPerView: 3,
+              spaceBetween: 10,
             },
             360: {
               slidesPerView: 2,
+              spaceBetween: 5,
             },
           }}
         >

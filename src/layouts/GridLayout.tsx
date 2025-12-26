@@ -16,16 +16,16 @@ const GridLayout = ({
   title,
   children,
   subjudul,
-  customStyle = "sm:w-11/12 w-full",
-  customStyleSecondary = "w-full xs:px-2 px-6 sm:px-8",
+  customStyle = "sm:w-11/12 w-11/12 xss:w-full",
+  customStyleSecondary = "w-full sm:w-11/12 px-2 sm:px-4",
 }: GridLayoutProps) => {
   return (
     <section
       id={id}
-      className={`${customStyle} text-white mx-auto flex flex-col items-center py-30`}
+      className={`${customStyle} text-white mx-auto flex flex-col items-center py-10 sm:py-30`}
     >
       <Animate direction="vertical" reverse={true}>
-        <div className="sm:w-2xl text-center w-11/12 mx-auto xs:w-full">
+        <div className="sm:w-2xl text-center w-11/12 mx-auto">
           <h2 className="sm:text-7xl font-secondary text-4xl xs:text-5xl font-bold">
             {title}
           </h2>

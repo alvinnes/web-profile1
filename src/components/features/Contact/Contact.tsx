@@ -74,7 +74,7 @@ const Contact = () => {
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             method="post"
-            className="w-full sm:w-5/12 p-4 xs:px-6 flex flex-col gap-6 bg-white/5 rounded-md"
+            className="w-full h-full justify-center sm:w-5/12 p-4 xs:px-6 flex flex-col gap-6 bg-white/5 rounded-md"
           >
             <InputItemContact
               placeholder="Insert your username"
@@ -86,7 +86,10 @@ const Contact = () => {
               name="email"
               form={form}
             />
-            <InputTextareaContact form={form} />
+            <InputTextareaContact
+              placeholder="Write your message here"
+              form={form}
+            />
             <Button
               className="bg-white text-[#1d1d1d] py-5 cursor-pointer w-fit px-8"
               variant={"secondary"}
@@ -130,9 +133,10 @@ const InputItemContact = <T extends keyof FormContactValues>({
 
 interface InputTextareaContact {
   form: UseFormReturn<FormContactValues, any, FormContactValues>;
+  placeholder: string;
 }
 
-const InputTextareaContact = ({ form }: InputTextareaContact) => {
+const InputTextareaContact = ({ form, placeholder }: InputTextareaContact) => {
   return (
     <FormField
       control={form.control}
@@ -141,7 +145,7 @@ const InputTextareaContact = ({ form }: InputTextareaContact) => {
         <FormItem>
           <FormControl className="flex">
             <Textarea
-              placeholder="Create description for project"
+              placeholder={placeholder}
               rows={4}
               className="scroll-style w-full h-40"
               {...field}

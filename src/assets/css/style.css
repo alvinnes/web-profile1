@@ -6,7 +6,8 @@
 @theme {
   --font-montserrat: "Montserrat", arial, sans-serif;
   --font-secondary: "Stack Sans Notch", arial, sans-serif;
-  --breakpoint-xs: 414px;
+  --breakpoint-xs: 428px;
+  --breakpoint-xss: 414px;
   --breakpoint-sm: 576px;
 }
 

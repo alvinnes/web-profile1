@@ -11,7 +11,7 @@ const Skills = () => {
       className="w-11/12 flex-col relative sm:flex-row mx-auto items-center flex justify-between gap-10"
     >
       <SoftSkills />
-      <div className="w-11/12 xs:w-full sm:w-xl flex flex-col gap-8">
+      <div className="sm:w-11/12 w-11/12 xss:w-full sm:w-xl flex flex-col gap-8">
         <TextType
           text={["Tech Skills"]}
           typingSpeed={100}

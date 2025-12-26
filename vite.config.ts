@@ -12,4 +12,7 @@ export default defineConfig({
     },
   },
   assetsInclude: ["**/*.glb"],
+  server: {
+    allowedHosts: true,
+  },
 });

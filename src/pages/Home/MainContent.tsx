@@ -21,7 +21,7 @@ const MainContent = () => {
           onContactClick={() => console.log("Contact clicked")}
         />
       </Animate>
-      <div className="flex items-center gap-8 absolute sm:-bottom-45 xs:-bottom-20">
+      <div className="flex items-center xs:gap-8 gap-6 absolute sm:-bottom-45 -bottom-20">
         {sosmedItem.map((item, index) => (
           <Animate reverse={true} key={index}>
             <a

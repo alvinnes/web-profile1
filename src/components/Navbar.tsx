@@ -35,7 +35,7 @@ const Navbar = () => {
       </nav>
 
       <aside
-        className={`${isClicked ? "right-0 opacity-100" : "-right-full opacity-0"} fixed top-0 bottom-0 traisiton-all duration-500 w-9/12 xs:w-8/12 bg-[#13042a] h-screen px-4 flex flex-col z-1000 justify-between py-4`}
+        className={`${isClicked ? "right-0 opacity-100" : "-right-full opacity-0"} fixed top-0 bottom-0 traisiton-all duration-500 w-8/12 bg-[#13042a] h-screen px-4 flex flex-col z-1000 justify-between py-4`}
       >
         <div className="w-full flex">
           <span
@@ -47,25 +47,32 @@ const Navbar = () => {
         </div>
         <hr className="w-full border-white" />
 
-        <ul className="flex flex-col gap-2 w-full">
+        <ul className="flex flex-col gap-1.5 w-full">
           {sidebarItem.map((item, index) => (
             <li
               key={index}
               className={`${isActiveSidebar(item.link) ? "bg-white/10" : "bg-transparent"} w-full py-3 px-4 transition-all duration-500 rounded-md`}
             >
-              <a href={item.link} className="flex items-center gap-1">
-                <Icon icon={item.icon} width={20} className="-mt-0.5" />{" "}
-                {item.name}
+              <a href={item.link} className="flex items-center gap-3">
+                <Icon icon={item.icon} width={20} /> {item.name}
               </a>
             </li>
           ))}
         </ul>
         <hr className="w-full border-white" />
         <div className="w-full px-3 py-6 bg-white/10  flex gap-3 rounded-xl items-center">
-          <div className="size-12 rounded-full bg-black"></div>
+          <div className="size-12 rounded-full bg-black overflow-hidden">
+            <img
+              src="/img/foto-profile2.png"
+              alt="profile photo"
+              className="size-full object-cover"
+            />
+          </div>
           <div className="">
-            <h3 className="text-xl font-semibold">Alvinnes</h3>
-            <p className="text-[0.8em] text-[grey]">Fullstack Developer</p>
+            <h3 className="text-lg xss:text-xl font-semibold">Alvinnes</h3>
+            <p className="text-[0.7em] xss:text-[0.8em] text-[grey]">
+              Fullstack Developer
+            </p>
           </div>
         </div>
       </aside>

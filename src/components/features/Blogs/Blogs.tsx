@@ -14,7 +14,7 @@ const Blogs = () => {
             and database management. Feel free to explore the details and see
             how I bring ideas to life through code."
     >
-      <div className="w-11/12 xs:w-full grid grid-cols-1 sm:grid-cols-3 place-items-center gap-10 sm:gap-y-15 mt-20 xs:mt-30 ">
+      <div className="sm:w-11/12 w-full grid grid-cols-1 sm:grid-cols-3 place-items-center gap-10 sm:gap-y-15 mt-20 xs:mt-30 ">
         {blogsItem.map((blog) => (
           <BlogsContent blog={blog} key={blog.id} />
         ))}

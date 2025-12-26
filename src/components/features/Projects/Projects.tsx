@@ -56,7 +56,7 @@ const Projects = () => {
     >
       <div
         ref={projectContent}
-        className="w-11/12 xs:w-full grid xs:grid-cols-1 sm:grid-cols-3 place-items-center gap-y-15 mt-20 xs:mt-30 "
+        className="sm:w-11/12 w-full xs:w-full grid grid-cols-2 sm:grid-cols-3 place-items-center gap-y-15 gap-x-4 pl-4 mt-20 mt-30 "
       >
         {projects.length > 0
           ? projects.map((project) => (

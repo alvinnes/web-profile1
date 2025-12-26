@@ -5,23 +5,23 @@ import { Button } from "@/components/ui/button";
 
 const TextHome = () => {
   return (
-    <div className="sm:w-2xl w-full xs:w-11/12 relative xs:mt-10">
+    <div className="sm:w-2xl xss:w-full w-11/12 relative xs:mt-10">
       <TextType
         text={["I'm a Fullstack Web Developer"]}
         typingSpeed={60}
         pauseDuration={1200}
         showCursor={true}
         cursorCharacter="|"
-        className="text-white text-xl mb-4 font-extralight"
+        className="text-white text-lg xss:text-xl mb-4 font-extralight"
       />
       <BlurText
         text="Hi I'm Alvinnes"
         delay={150}
         animateBy="words"
         direction="top"
-        className="sm:text-8xl xs:text-5xl font-secondary font-bold -ml-1.5"
+        className="sm:text-8xl text-4xl xss:text-5xl font-secondary font-bold sm:-ml-1.5"
       />
-      <div className="absolute -z-1 sm:left-80 xs:left-30 xs:top-17 sm:top-23 w-full translate-y-2">
+      <div className="absolute -z-1 sm:left-80 left-30 top-17 sm:top-23 w-full translate-y-2">
         <Animate direction="vertical">
           <svg
             viewBox="0 -10 230 20"

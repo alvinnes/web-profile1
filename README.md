@@ -1,3 +1,4 @@
+
 # Alvinity 🚀
 
 **Alvinity** is a premium, high-performance portfolio website built with **React**, **TypeScript**, and **Vite**. It features modern UI/UX design with smooth animations, interactive 3D elements, and a glassmorphism aesthetic.
