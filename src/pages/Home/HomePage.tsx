@@ -15,15 +15,46 @@ import TextAbout from "../../components/features/About/TextAbout";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/features/Contact/Contact";
 import Timeline from "@/components/features/Education/Timeline";
+import { useEffect, useState } from "react";
 
 const HomePage = () => {
+  const [isMounted, setIsMounted] = useState(false);
+  const [isMountedTitle, setIsMountedTitle] = useState(false);
+  const [isMountedSubtitle, setIsMountedSubtitle] = useState(false);
+  const [isMountedLayer1, setIsMountedLayer1] = useState(false);
+  const [isMountedLayer2, setIsMountedLayer2] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsMountedTitle(true);
+    }, 500);
+
+    setTimeout(() => {
+      setIsMountedSubtitle(true);
+    }, 800);
+    setTimeout(() => {
+      setIsMounted(true);
+    }, 3000);
+    setTimeout(() => {
+      setIsMountedLayer1(true);
+    }, 3400);
+    setTimeout(() => {
+      setIsMountedLayer2(true);
+    }, 3700);
+  }, [
+    isMounted,
+    isMountedSubtitle,
+    isMountedTitle,
+    isMountedLayer1,
+    isMountedLayer2,
+  ]);
   return (
     <main className="w-full text-white">
       <Navbar />
 
       <section
         id="home"
-        className="text-white w-full h-270 sm:h-screen relative"
+        className="text-white w-full h-270 sm:h-screen relative overflow-hidden"
       >
         <Squares
           speed={0.5}
@@ -37,7 +68,7 @@ const HomePage = () => {
 
       <section
         id="about"
-        className="sm:w-full bg-slate-950 relative flex justify-center mx-auto py-40"
+        className="sm:w-full bg-slate-950 relative flex justify-center mx-auto py-40 overflow-x-hidden"
       >
         <div className="w-11/12 sm:w-10/12 flex flex-col items-center">
           <Animate direction="vertical" reverse={true}>
@@ -52,108 +83,6 @@ const HomePage = () => {
         </div>
         <div className="absolute top-4 right-4 size-130 rounded-full blur-[3rem] bg-indigo-500/5 "></div>
         <div className="absolute bottom-4 left-0 size-130 rounded-full blur-[3rem] bg-indigo-500/5 "></div>
-
-        <div className="fixed top-0 left-0 z-1000 size-full bg-white/20 backdrop-blur-sm flex justify-center items-center">
-          <div className="w-10/12 p-1 h-[80vh] flex justify-between relative bg-slate-800 rounded-xl overflow-hidden custom-scroll">
-            <div className="w-4/12 h-full"></div>
-            <div className="w-8/12 h-full overflow-y-auto p-6 flex flex-col gap-4">
-              <h2 className="text-2xl font-bold">All About Me</h2>
-              <p className="text-sm leading-6">
-                Hello, my name is <strong>Alvin Nando Erik Saputra</strong>, an
-                11th-grade student at <strong>SMK Walisongo Pecangaan</strong>,
-                majoring in <strong>Computer and Network Engineering</strong>. I
-                have a strong interest in the world of technology, particularly
-                in <strong>software development</strong>,
-                <strong>computer networking</strong>, and{" "}
-                <strong>digital systems</strong>. Since the beginning of my
-                studies, I have continuously developed my technical and
-                professional skills to prepare myself for a future career as a{" "}
-                <strong>Software Engineer</strong>.
-              </p>
-              <h2 className="text-2xl font-bold">Current Focus</h2>
-              <p className="text-sm leading-6">
-                Currently, I have gained experience in{" "}
-                <strong>web application development</strong> as a{" "}
-                <strong>Fullstack Developer</strong>, with a primary focus on{" "}
-                <strong>React.js</strong> for frontend development, while
-                continuously improving my skills in{" "}
-                <strong>backend development</strong>. I am committed to learning
-                new technologies and working on various projects to broaden my
-                experience and strengthen my technical foundation.
-              </p>
-              <h2 className="text-2xl font-bold">Personal Strengths</h2>
-              <p className="text-sm leading-6">
-                On a personal level, I am known as a <strong>humble</strong>,{" "}
-                <strong>communicative</strong>, and{" "}
-                <strong>collaborative</strong> individual who works well in team
-                environments. I possess strong{" "}
-                <strong>problem-solving skills</strong>, good{" "}
-                <strong>leadership abilities</strong>, and the ability to adapt
-                quickly in dynamic environments. I strongly believe that
-                effective teamwork leads to better and more impactful solutions.
-              </p>
-              <h2 className="text-2xl font-bold">Technical Skills</h2>
-              <p className="text-sm leading-6">
-                Throughout my studies in the Computer and Network Engineering
-                program, I have developed a broad range of technical
-                competencies across <strong>hardware</strong>,{" "}
-                <strong>networking</strong>,{" "}
-                <strong>server administration</strong>, and{" "}
-                <strong>Internet of Things (IoT)</strong>.
-              </p>
-              <ul className="list-disc ml-12 text-sm flex flex-col gap-2">
-                <li>
-                  Understanding of <strong>computer components</strong> and{" "}
-                  <strong>PC assembly</strong>
-                </li>
-                <li>
-                  Development of <strong>website landing pages</strong>
-                </li>
-                <li>
-                  <strong>Subnetting</strong>, <strong>VLSM</strong>, and{" "}
-                  <strong>IP address management</strong>
-                </li>
-                <li>
-                  <strong>Basic MikroTik configuration</strong>, including VLAN,
-                  hotspot, port forwarding, basic routing, and access point
-                  setup
-                </li>
-                <li>
-                  Installation and configuration of
-                  <strong>FreePBX</strong> and <strong>Asterisk</strong> for
-                  <strong>VoIP systems</strong>
-                </li>
-                <li>
-                  Configuration of <strong>IP Phones</strong>,
-                  <strong>PortSIP</strong>, and <strong>MicroSIP</strong>
-                </li>
-                <li>
-                  Installation of <strong>Debian Server</strong> with services
-                  such as SSH, Apache2, and ProFTPD
-                </li>
-                <li>
-                  Installation and use of <strong>Proxmox</strong> for
-                  <strong>server virtualization</strong>
-                </li>
-                <li>
-                  <strong>IoT development</strong>, including relays,
-                  temperature sensors, Arduino IDE, and Arduino Cloud
-                </li>
-                <li>
-                  IoT project involving
-                  <strong>relay and lighting control</strong> and
-                  <strong>cloud-based temperature monitoring</strong>
-                </li>
-              </ul>
-              <p className="text-sm leading-6">
-                With a combination of strong technical skills, solid
-                interpersonal abilities, and a continuous learning mindset, I am
-                eager to grow further and contribute meaningfully to the
-                technology industry.
-              </p>
-            </div>
-          </div>
-        </div>
       </section>
 
       <Skills />
@@ -163,7 +92,7 @@ const HomePage = () => {
         className="w-full flex flex-col relative bg-slate-950 items-center mx-auto py-40"
       >
         <Animate direction="vertical" reverse={true}>
-          <div className="sm:w-xl w-11/12 mx-auto xs:w-full text-center">
+          <div className="sm:w-xl w-10/12 mx-auto xs:w-full text-center">
             <h2 className="sm:text-7xl  text-4xl xs:text-5xl font-secondary font-bold">
               My Education
             </h2>
@@ -188,7 +117,7 @@ const HomePage = () => {
             title="SMP NEGERI 1 BATEALIT"
             year="2020 - 2023"
             position="translate-x-0"
-            positionBullet="sm:left-141.5 -left-7"
+            positionBullet="sm:left-155.5 -left-7"
           >
             In 9th grade, I was introduced to the world of coding and became
             interested in learning HTML and basic computer concepts.
@@ -238,6 +167,28 @@ const HomePage = () => {
       <Blogs />
       <Contact />
       <Footer />
+
+      <div
+        className={`${isMounted ? "invisible -top-full" : "top-0 visible"} fixed left-0 bg-slate-950 size-full flex justify-center items-center z-1000 ease-in-out transition-all duration-2000`}
+      >
+        <h1
+          className={`${isMountedTitle ? "mt-0 opacity-100 animate-pulse" : "-mt-50 opacity-0 animate-none"} transition-all duration-1200 font-bold font-secondary text-8xl relative ease-out`}
+        >
+          Alvin
+        </h1>
+        <span
+          className={`${isMountedSubtitle ? "opacity-100 mt-0" : "opacity-0 mt-50"} transition-all duration-1200 text-indigo-500 text-8xl font-bold ease-out`}
+        >
+          nes
+        </span>
+      </div>
+
+      <div
+        className={`${isMountedLayer1 ? "invisible -top-full" : "visible top-0"} size-full fixed left-0 bg-slate-900 z-999 transition-all duration-1500 ease-in-out`}
+      ></div>
+      <div
+        className={`${isMountedLayer2 ? "invisible -top-full" : "visible top-0"} size-full fixed left-0 bg-slate-800 z-998 transition-all duration-1500 ease-in-out`}
+      ></div>
     </main>
   );
 };

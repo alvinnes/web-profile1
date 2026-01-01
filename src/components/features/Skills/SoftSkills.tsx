@@ -7,7 +7,7 @@ import softSkillsItem from "@/types/SoftSkillsItem";
 const SoftSkills = () => {
   return (
     <div className="sm:w-2xl w-11/12 xss:w-full mb-20 xss:mb-50 sm:mb-0">
-      <div className="relative sm:overflow-hidden h-250 xss:h-200 sm:h-250 sm:w-400 w-220 xss:w-290">
+      <div className="relative z-0 sm:overflow-hidden h-250 xss:h-200 sm:h-250 sm:w-400 w-220 xss:w-290">
         <LaserFlow
           wispIntensity={20}
           horizontalSizing={0.5}
@@ -20,7 +20,7 @@ const SoftSkills = () => {
         />
         <div className="absolute left-0 -bottom-48 sm:-bottom-58 w-full h-[60%] rounded-md z-6">
           <Animate direction="vertical">
-            <div className="sm:w-2xl w-76 xss:w-98 h-full sm:h-89 rounded-xl bg-white/5 border-solid border-slate-200/50 border-1 backdrop-blur-2xl sm:-mt-35 p-6 flex flex-col justify-between -mt-22 xss:-mt-27">
+            <div className="sm:w-2xl w-75.5 xss:w-92 h-full sm:h-89 rounded-xl bg-white/5 border-solid border-slate-200/50 border-1 backdrop-blur-2xl sm:-mt-35 p-6 flex flex-col justify-between -mt-22 xss:-mt-27">
               <TextType
                 text={["Soft Skills"]}
                 typingSpeed={120}

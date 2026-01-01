@@ -51,7 +51,7 @@ const CertificationsContent = () => {
           >
             <Icon
               icon="material-symbols:close-rounded"
-              className="size-6 xs:size-8"
+              className="size-6 xs:size-6"
             />
           </span>
         </div>

@@ -127,6 +127,11 @@
   }
 }
 
-.scroll-style::-webkit-scrollbar {
-  width: 0;
+.custom-scroll::-webkit-scrollbar-track {
+  display: none;
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) rgba(0, 0, 0, 0.2);
 }

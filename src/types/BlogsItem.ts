@@ -11,68 +11,65 @@ export interface BlogsItem {
 const blogsItem: BlogsItem[] = [
   {
     id: 1,
-    title:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosam? In.",
-    category: "Programming",
+    title: "Virtual PC Assembly Guide Using Cisco IT Essentials",
+    category: "Tutorials",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosamIn",
+      "Complete computer assembly steps from power supply installation to external device connection in Cisco IT Essentials simulation.",
     create_at: "24-11-2025",
-    img: "/img/img-projects/simple-landing-page.png",
+    img: "/img/img-blogs/pc-virtual.png",
     delay: 0.1,
   },
   {
     id: 2,
-    title:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosam? In.",
-    category: "Programming",
+    title: "How to Install and Configure ProFTPD on Debian 12 Bookworm Linux",
+    category: "Servers",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosamIn",
+      "Complete step-by-step guide to setting up FTP server on Debian 12 Bookworm with ProFTPD, including configuration, permissions, and FileZilla integration.",
     create_at: "24-11-2025",
-    img: "/img/img-projects/project-2.png",
+    img: "/img/img-blogs/proftpd.png",
     delay: 0.2,
   },
   {
     id: 3,
     title:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosam? In.",
-    category: "Programming",
+      "How to Install and Configure Apache Web Server on Debian 12 Bookworm Linux",
+    category: "Servers",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosamIn",
+      "Step-by-step guide to installing Apache2, deploying custom web pages, and configuring ports on Debian 12 Bookworm Linux for beginners.",
     create_at: "24-11-2025",
-    img: "/img/img-projects/simple-landing-page.png",
+    img: "/img/img-blogs/web-server.png",
     delay: 0.3,
   },
   {
     id: 4,
     title:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosam? In.",
-    category: "Programming",
+      "How to Install and Configure SSH Remote Server on Debian 12 Bookworm Linux",
+    category: "Servers",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosamIn",
+      "Complete guide to installing OpenSSH server, enabling remote access, and customizing SSH port and root login on Debian 12 Bookworm Linux.",
     create_at: "24-11-2025",
-    img: "/img/img-projects/project-2.png",
+    img: "/img/img-blogs/ssh.png",
     delay: 0.1,
   },
   {
     id: 5,
     title:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosam? In.",
-    category: "Programming",
+      "How to Configure Network Settings and Repository on Debian 12 (Bookworm) in VirtualBox",
+    category: "Servers",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosamIn",
+      "Complete guide to setting up bridged adapter, configuring static/DHCP network, adding repository sources, and updating Debian 12 Bookworm VM.",
     create_at: "24-11-2025",
-    img: "/img/img-projects/simple-landing-page.png",
+    img: "/img/img-blogs/network.png",
     delay: 0.2,
   },
   {
     id: 6,
-    title:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosam? In.",
-    category: "Programming",
+    title: "How to Install and Configure Proxmox VE on Physical Server",
+    category: "Tutorials",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quisquam voluptatibus libero ipsa laboriosamIn",
+      "Complete step-by-step guide to installing Proxmox VE from bootable USB, configuring BIOS virtualization settings, network setup, and accessing the web interface.",
     create_at: "24-11-2025",
-    img: "/img/img-projects/project-2.png",
+    img: "/img/img-blogs/proxmox.png",
     delay: 0.3,
   },
 ];

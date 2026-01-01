@@ -24,6 +24,7 @@ const TechSkillsLayout = ({
           slidesPerView={4}
           watchSlidesProgress={true}
           className="flex sm:gap-4"
+          grabCursor={true}
           spaceBetween={0}
           autoplay={{ delay, pauseOnMouseEnter: true }}
           modules={[Autoplay]}

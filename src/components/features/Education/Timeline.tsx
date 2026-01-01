@@ -30,10 +30,10 @@ const Timeline: React.FC<TimelineProps> = ({
       ref={containerRef}
       className={`relative ${className} ${height} flex flex-col justify-between py-10`}
     >
-      <div className="absolute top-0 left-0 sm:left-1/2 -translate-x-1/2 w-1 h-full bg-slate-100/50 rounded-full" />
+      <div className="absolute top-0 left-0 xs:left-1.5 sm:left-1/2 -translate-x-1/2 w-1 h-full bg-slate-100/50 rounded-full" />
 
       <motion.div
-        className="absolute top-0 left-0 sm:left-1/2 -translate-x-1/2 w-1 h-full bg-white origin-top rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] z-10"
+        className="absolute top-0 left-0 xs:left-1.5 sm:left-1/2 -translate-x-1/2 w-1 h-full bg-white origin-top rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] z-10"
         style={{ scaleY }}
       />
       {children}

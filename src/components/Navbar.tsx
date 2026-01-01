@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <Fragment>
-      <nav className="w-11/12 fixed top-4 sm:top-2 left-1/2 -translate-x-1/2 bg-white/5 rounded-md backdrop-blur-sm z-49 py-8 px-[3%] flex justify-between items-center">
+      <nav className="w-11/12 fixed top-2 left-1/2 -translate-x-1/2 bg-white/5 rounded-md backdrop-blur-sm z-49 py-8 px-[3%] flex justify-between items-center">
         <h3 className="font-semibold o text-3xl font-secondary">Alvinnes</h3>
         <ul className="hidden sm:flex gap-10">
           {navItem.map((item, index) => (

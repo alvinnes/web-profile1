@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 
 const Footer = () => {
   return (
-    <footer className="mx-auto w-full sm:gap-8 rounded-t-md bg-indigo-500/10 py-15 flex-col sm:flex-row flex justify-between gap-15 px-8 xs:px-6 sm:px-14">
+    <footer className="mx-auto w-full overflow-x-hidden sm:gap-8 rounded-t-md bg-indigo-500/10 py-15 flex-col sm:flex-row flex justify-between gap-15 px-8 xs:px-6 sm:px-14">
       <div>
         <h3 className="text-2xl font-bold relative before:w-20 before:h-1 before:bg-indigo-500 before:absolute before:-bottom-1 before:left-0.5 mb-8">
           Alvinnes

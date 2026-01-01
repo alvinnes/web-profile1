@@ -45,7 +45,7 @@ const FormProjects = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setOnSubmited(true);
     try {
-      const url = "http://localhost:3000";
+      const url = import.meta.env.VITE_END_POINT_PROJECTS;
       const formData = new FormData();
 
       formData.append("img", values.img);
