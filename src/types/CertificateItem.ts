@@ -1,4 +1,4 @@
-interface CertificateItem {
+export interface CertificateItem {
   img: string;
   alt: string;
   delay: number;

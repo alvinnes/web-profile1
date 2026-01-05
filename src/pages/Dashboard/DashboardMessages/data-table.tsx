@@ -29,7 +29,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="overflow-hidden w-11/12 h-fit rounded-md mt-4 border-b border-[#80808040] text-white bg-[#222] text-center">
+    <div className="overflow-hidden w-full h-fit rounded-md mt-4 border-b border-[#80808040] text-white bg-[#222] text-center">
       <TableContact>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (

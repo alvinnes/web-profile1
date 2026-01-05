@@ -15,7 +15,8 @@ import {
 } from "@/components/ui/dialog";
 import FormCertificatesContent from "./FormCertificatesContent";
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import ModalLoading from "@/components/ui/modal-loading";
+import ModalSuccess from "@/components/ui/modal-success";
 
 const formCertificationSchema = z.object({
   certification: z
@@ -29,7 +30,6 @@ const formCertificationSchema = z.object({
 const DialogCertificates = () => {
   const [submitted, setSubmitted] = useState(false);
   const [success, setSuccess] = useState(false);
-  const navigate = useNavigate();
   const form = useForm({
     resolver: zodResolver(formCertificationSchema),
     defaultValues: {
@@ -50,14 +50,17 @@ const DialogCertificates = () => {
       const response = await postCertificates.json();
       console.log(response);
 
-      setSubmitted(false);
-      setSuccess(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setSuccess(true);
+      }, 1000);
+
       setTimeout(() => {
         setSuccess(false);
-      }, 1000);
+      }, 2000);
       setTimeout(() => {
-        navigate("/dashboard/certifications");
-      }, 1000);
+        window.location.reload();
+      }, 2200);
     } catch (err) {
       console.error(err);
     }
@@ -65,15 +68,17 @@ const DialogCertificates = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="py-5 cursor-pointer">
+        <Button variant="outline" className="cursor-pointer py-5">
           Add Certification
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-[425px] bg-[#333] text-white">
+      <DialogContent className="bg-[#333] text-white sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Add Your Certification</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-2xl font-bold">
+            Add Your Certification
+          </DialogTitle>
+          <DialogDescription className="text-base text-slate-100">
             Make changes to your profile here. Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
@@ -81,25 +86,29 @@ const DialogCertificates = () => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="p-2 rounded-md gap-4 flex flex-col text-white mt-2"
+            className="mt-2 flex flex-col gap-4 rounded-md text-white"
           >
             <FormCertificatesContent form={form} />
             <DialogFooter className="mt-1">
               <DialogClose asChild>
                 <Button
                   variant="outline"
-                  className="text-[#1d1d1d] py-5 cursor-pointer"
+                  className="cursor-pointer py-5 text-[#1d1d1d]"
                 >
                   Cancel
                 </Button>
               </DialogClose>
-              <Button type="submit" className="py-5.5 ml-2 cursor-pointer">
+              <Button type="submit" className="ml-2 cursor-pointer py-5.5">
                 Submit
               </Button>
             </DialogFooter>
           </form>
         </Form>
       </DialogContent>
+      <ModalLoading submitted={submitted} />
+      <ModalSuccess success={success}>
+        <p>Successfully added certificate!</p>
+      </ModalSuccess>
     </Dialog>
   );
 };
