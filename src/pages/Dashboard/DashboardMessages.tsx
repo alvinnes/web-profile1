@@ -35,7 +35,7 @@ const DashboardMessages = () => {
   }, []);
   return (
     <DashboardLayout>
-      <div className="w-full h-screen bg-black text-white px-4 flex justify-center">
+      <div className="flex h-screen w-full justify-center bg-black px-4 text-white">
         <DataTable columns={columns} data={contacts} />
       </div>
     </DashboardLayout>

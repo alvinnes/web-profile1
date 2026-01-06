@@ -65,16 +65,16 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="w-11/12 flex flex-col items-center mx-auto py-40"
+      className="mx-auto flex w-11/12 flex-col items-center py-40"
     >
       <HeaderContact />
-      <div className="w-full flex flex-col sm:flex-row items-center h-full sm:h-140 justify-between mt-8 bg-slate-900">
+      <div className="mt-8 flex h-full w-full flex-col items-center justify-between bg-slate-900 sm:h-140 sm:flex-row">
         <ContentContact />
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             method="post"
-            className="w-full h-full justify-center sm:w-5/12 p-4 xs:px-6 flex flex-col gap-6 bg-white/5 rounded-md"
+            className="xs:px-6 flex h-full w-full flex-col justify-center gap-6 rounded-md bg-white/5 p-4 sm:w-5/12"
           >
             <InputItemContact
               placeholder="Insert your username"
@@ -91,7 +91,7 @@ const Contact = () => {
               form={form}
             />
             <Button
-              className="bg-white text-[#1d1d1d] py-5 cursor-pointer w-fit px-8"
+              className="w-fit cursor-pointer bg-white px-8 py-5 text-[#1d1d1d]"
               variant={"secondary"}
             >
               Submit
@@ -147,7 +147,7 @@ const InputTextareaContact = ({ form, placeholder }: InputTextareaContact) => {
             <Textarea
               placeholder={placeholder}
               rows={4}
-              className="scroll-style w-full h-40"
+              className="scroll-style h-40 w-full"
               {...field}
             />
           </FormControl>

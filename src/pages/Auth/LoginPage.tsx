@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { type FormEvent, useState } from "react";
 import { Link } from "react-router";
 
 import ThemeToggle from "@/components/ThemeToggle";
@@ -20,15 +20,17 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground flex items-center justify-center px-4">
+    <div className="bg-background text-foreground flex min-h-screen w-full items-center justify-center px-4">
       <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div>
 
-      <div className="w-full max-w-sm rounded-xl border border-border bg-card text-card-foreground shadow-sm p-6 space-y-6">
+      <div className="border-border bg-card text-card-foreground w-full max-w-sm space-y-6 rounded-xl border p-6 shadow-sm">
         <div className="space-y-1">
-          <h1 className="text-2xl font-semibold tracking-tight">Welcome back</h1>
-          <p className="text-sm text-muted-foreground">
+          <h1 className="text-2xl font-semibold tracking-tight">
+            Welcome back
+          </h1>
+          <p className="text-muted-foreground text-sm">
             Sign in to access your dashboard.
           </p>
         </div>
@@ -50,7 +52,7 @@ const LoginPage = () => {
               <Label htmlFor="password">Password</Label>
               <button
                 type="button"
-                className="text-xs text-muted-foreground hover:text-foreground underline-offset-4 hover:underline"
+                className="text-muted-foreground hover:text-foreground text-xs underline-offset-4 hover:underline"
               >
                 Forgot password?
               </button>
@@ -69,13 +71,13 @@ const LoginPage = () => {
           </Button>
         </form>
 
-        <p className="text-xs text-center text-muted-foreground">
+        <p className="text-muted-foreground text-center text-xs">
           Don&apos;t have an account?{" "}
-          <span className="font-medium text-foreground">Contact the admin</span>
+          <span className="text-foreground font-medium">Contact the admin</span>
         </p>
 
-        <p className="text-xs text-center text-muted-foreground">
-          <Link to="/" className="hover:underline underline-offset-4">
+        <p className="text-muted-foreground text-center text-xs">
+          <Link to="/" className="underline-offset-4 hover:underline">
             Back to portfolio
           </Link>
         </p>
@@ -85,5 +87,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
-

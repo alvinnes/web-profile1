@@ -18,7 +18,7 @@ const Projects = () => {
           observer.disconnect();
         }
       },
-      { rootMargin: "-400px" }
+      { rootMargin: "-400px" },
     );
 
     if (projectContent.current) {
@@ -56,7 +56,7 @@ const Projects = () => {
     >
       <div
         ref={projectContent}
-        className="sm:w-11/12 w-full xs:w-full grid grid-cols-2 sm:grid-cols-3 place-items-center gap-y-15 gap-x-4 pl-4 mt-20 mt-30 "
+        className="xs:w-full mt-20 grid w-full grid-cols-2 place-items-center gap-x-4 gap-y-15 pl-4 sm:w-11/12 sm:grid-cols-3"
       >
         {projects.length > 0
           ? projects.map((project) => (

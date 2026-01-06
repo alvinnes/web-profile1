@@ -29,25 +29,25 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="overflow-hidden w-full h-fit rounded-md mt-4 border-b border-[#80808040] text-white bg-[#222] text-center">
+    <div className="mt-4 h-fit w-11/12 overflow-hidden rounded-md border-b border-[#80808040] bg-[#222] text-center text-white">
       <TableContact>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow
               key={headerGroup.id}
-              className="hover:bg-[#333] bg-[#333] border-none"
+              className="border-none bg-[#333] hover:bg-[#333]"
             >
               {headerGroup.headers.map((header) => {
                 return (
                   <TableHead
                     key={header.id}
-                    className="text-white  py-5 px-6 text-center"
+                    className="px-6 py-7 text-center text-white"
                   >
                     {header.isPlaceholder
                       ? null
                       : flexRender(
                           header.column.columnDef.header,
-                          header.getContext()
+                          header.getContext(),
                         )}
                   </TableHead>
                 );
@@ -61,12 +61,12 @@ export function DataTable<TData, TValue>({
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
-                className="w-50 overflow-hidden hover:bg-[#333] border-b border-[#80808040]"
+                className="w-50 overflow-hidden border-b border-[#80808040] hover:bg-[#33333350]"
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell
                     key={cell.id}
-                    className="py-6 max-w-40 overflow-hidden text-nowrap text-ellipsis"
+                    className="max-w-40 overflow-hidden py-6 text-nowrap text-ellipsis"
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>

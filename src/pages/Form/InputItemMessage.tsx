@@ -5,25 +5,23 @@ import {
   FormField,
   FormItem,
   FormMessage,
-} from "../../../components/ui/form";
-import { Input } from "../../../components/ui/input";
+} from "../../components/ui/form";
+import { Input } from "../../components/ui/input";
 
 interface InputItemProps {
-  form: UseFormReturn<FormValues, any, FormValues>;
+  form: UseFormReturn<FormValuesMessage, any, FormValuesMessage>;
   type?: string;
   placeholder: string;
   name: string;
 }
 
-export type FormValues = {
-  title: string;
-  url: string;
-  techs: string;
-  description: string;
-  img: File;
+export type FormValuesMessage = {
+  username: string;
+  email: string;
+  message: string;
 };
 
-const InputItem = <T extends keyof FormValues>(
+const InputItemMessage = <T extends keyof FormValuesMessage>(
   props: InputItemProps & { name: T },
 ) => {
   const { form, name, type, placeholder } = props;
@@ -32,16 +30,14 @@ const InputItem = <T extends keyof FormValues>(
       control={form.control}
       name={name}
       render={({ field }) => {
-        const { value, ...rest } = field;
-
         return (
           <FormItem>
             <FormControl className="flex">
               <Input
                 type={type}
                 placeholder={placeholder}
-                {...rest}
                 className="w-full py-6.5"
+                {...field}
               />
             </FormControl>
             <FormMessage />
@@ -53,4 +49,4 @@ const InputItem = <T extends keyof FormValues>(
   );
 };
 
-export default InputItem;
+export default InputItemMessage;

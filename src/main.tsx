@@ -9,6 +9,7 @@ import "./assets/css/style.css";
 import FormProjects from "./pages/Form/FormProjects/FormProjects";
 import DashboardCertifications from "./pages/Dashboard/DashboardCertifications";
 import DashboardMessages from "./pages/Dashboard/DashboardMessages";
+import FormMessages from "./pages/Form/FormMessages";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -23,7 +24,8 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/dashboard/messages" element={<DashboardMessages />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/addProjects" element={<FormProjects />} />
+        <Route path="/updateMessages/:id" element={<FormMessages />} />
       </Routes>
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );
