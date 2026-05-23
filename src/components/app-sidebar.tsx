@@ -37,8 +37,8 @@ const data = {
       icon: BookOpen,
     },
     {
-      title: "Settings",
-      url: "/dashboard",
+      title: "Activities",
+      url: "/dashboard/activities",
       icon: Settings2,
     },
   ],

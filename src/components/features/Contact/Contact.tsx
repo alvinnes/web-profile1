@@ -39,7 +39,7 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof schemaContact>) => {
     console.log(values);
-    const urlPostMessage = "http://localhost:3000/api/v1/contacts";
+    const urlPostMessage = import.meta.env.VITE_END_POINT_CONTACTS;
     const contactsData = {
       username: values.username,
       email: values.email,

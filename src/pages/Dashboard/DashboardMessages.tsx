@@ -2,6 +2,7 @@ import DashboardLayout from "@/layouts/DashboardLayout";
 import { useEffect, useState } from "react";
 import { DataTable } from "./DashboardMessages/data-table";
 import { columns, type Contact } from "./DashboardMessages/columns";
+import PaginationMessages from "./DashboardMessages/pagination";
 
 const DashboardMessages = () => {
   const [contacts, setContacts] = useState<Contact[]>([]);
@@ -35,8 +36,12 @@ const DashboardMessages = () => {
   }, []);
   return (
     <DashboardLayout>
-      <div className="flex h-screen w-full justify-center bg-black px-4 text-white">
+      <div className="flex h-screen w-full flex-col items-center justify-center bg-black px-4 text-white">
         <DataTable columns={columns} data={contacts} />
+        <div className="mx-auto mt-8 flex w-11/12 items-center justify-between text-white">
+          <p className="w-xs text-sm">1 - 10 of 100</p>
+          <PaginationMessages />
+        </div>
       </div>
     </DashboardLayout>
   );

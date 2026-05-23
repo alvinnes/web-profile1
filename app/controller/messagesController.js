@@ -1,3 +1,4 @@
+import { matchedData, validationResult } from "express-validator";
 import db from "../storage/connection.js";
 
 export const getMessages = (req, res) => {
@@ -21,17 +22,22 @@ export const getMessageById = (req, res) => {
 };
 
 export const postMessage = (req, res) => {
-  const username = req.body.username;
-  const email = req.body.email;
-  const message = req.body.message;
+  const result = validationResult(req);
+
+  if (!result.isEmpty()) {
+    return res.json({ errors: result.array() });
+  }
+  const { username, email, message } = matchedData(req);
   const queryPostContact =
     "INSERT INTO ?? (username, email, message) VALUES (?, ?, ?)";
   db.query(
     queryPostContact,
     ["message", username, email, message],
     (err, result) => {
-      if (err) res.status(500).json({ message: "Internal server error!" });
-      res.status(200).json(result);
+      if (err) {
+        return res.status(500).json({ message: "Internal server error!" });
+      }
+      return res.status(200).json(result);
     },
   );
 };

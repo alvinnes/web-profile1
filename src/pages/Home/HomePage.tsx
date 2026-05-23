@@ -15,7 +15,8 @@ import TextAbout from "../../components/features/About/TextAbout";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/features/Contact/Contact";
 import Timeline from "@/components/features/Education/Timeline";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Icon } from "@iconify/react";
 
 const HomePage = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -23,6 +24,8 @@ const HomePage = () => {
   const [isMountedSubtitle, setIsMountedSubtitle] = useState(false);
   const [isMountedLayer1, setIsMountedLayer1] = useState(false);
   const [isMountedLayer2, setIsMountedLayer2] = useState(false);
+  const [isPlayed, setIsPlayed] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -48,13 +51,36 @@ const HomePage = () => {
     isMountedLayer1,
     isMountedLayer2,
   ]);
+
+  const handlePlayMusic = () => {
+    if (isPlayed == false) {
+      audioRef.current?.play();
+      setIsPlayed(true);
+    } else {
+      audioRef.current?.pause();
+      setIsPlayed(false);
+    }
+  };
   return (
     <main className="w-full text-white">
+      <div
+        onClick={handlePlayMusic}
+        className="animate-rotate fixed right-7 bottom-8 z-999 flex size-13 cursor-pointer items-center justify-center rounded-full bg-indigo-500"
+      >
+        <Icon
+          icon={isPlayed ? "ri:pause-fill" : "ri:play-fill"}
+          className="size-8"
+        />
+        <audio ref={audioRef} loop>
+          <source src="/audio/backsound.mp3" type="audio/mp3" />
+          Browser doesn't support audio tag
+        </audio>
+      </div>
       <Navbar />
 
       <section
         id="home"
-        className="text-white w-full h-270 sm:h-screen relative overflow-hidden"
+        className="relative h-270 w-full overflow-hidden text-white sm:h-screen"
       >
         <Squares
           speed={0.5}
@@ -68,35 +94,35 @@ const HomePage = () => {
 
       <section
         id="about"
-        className="sm:w-full bg-slate-950 relative flex justify-center mx-auto py-40 overflow-x-hidden"
+        className="relative mx-auto flex justify-center overflow-x-hidden bg-slate-950 py-40 sm:w-full"
       >
-        <div className="w-11/12 sm:w-10/12 flex flex-col items-center">
+        <div className="flex w-11/12 flex-col items-center sm:w-10/12">
           <Animate direction="vertical" reverse={true}>
-            <h2 className="text-4xl font-bold sm:block hidden">About Me</h2>
+            <h2 className="hidden text-4xl font-bold sm:block">About Me</h2>
           </Animate>
-          <div className="w-full flex sm:flex-row flex-col justify-between items-center -mt-15">
-            <div className="overflow-hidden -mt-20 sm:-mt-35 w-xl">
+          <div className="-mt-15 flex w-full flex-col items-center justify-between sm:flex-row">
+            <div className="-mt-20 w-xl overflow-hidden sm:-mt-35">
               <Lanyard position={[0, 0, 13]} gravity={[0, -100, 0]} />
             </div>
             <TextAbout />
           </div>
         </div>
-        <div className="absolute top-4 right-4 size-130 rounded-full blur-[3rem] bg-indigo-500/5 "></div>
-        <div className="absolute bottom-4 left-0 size-130 rounded-full blur-[3rem] bg-indigo-500/5 "></div>
+        <div className="absolute top-4 right-4 size-130 rounded-full bg-indigo-500/5 blur-[3rem]"></div>
+        <div className="absolute bottom-4 left-0 size-130 rounded-full bg-indigo-500/5 blur-[3rem]"></div>
       </section>
 
       <Skills />
 
       <section
         id="education"
-        className="w-full flex flex-col relative bg-slate-950 items-center mx-auto py-40"
+        className="relative mx-auto flex w-full flex-col items-center bg-slate-950 py-40"
       >
         <Animate direction="vertical" reverse={true}>
-          <div className="sm:w-xl w-10/12 mx-auto xs:w-full text-center">
-            <h2 className="sm:text-7xl  text-4xl xs:text-5xl font-secondary font-bold">
+          <div className="xs:w-full mx-auto w-10/12 text-center sm:w-xl">
+            <h2 className="xs:text-5xl font-secondary text-4xl font-bold sm:text-7xl">
               My Education
             </h2>
-            <p className="xs:text-sm text-[0.8em] font-extralight mt-6">
+            <p className="xs:text-sm mt-6 text-[0.8em] font-extralight">
               Every stage of my education has given me different experiences and
               lessons that have helped me grow and understand my interests in
               the world of technology.
@@ -105,7 +131,7 @@ const HomePage = () => {
         </Animate>
 
         <Timeline
-          className="mt-10 xs:mt-30 w-11/12 sm:self-center self-start"
+          className="xs:mt-30 mt-10 w-11/12 self-start sm:self-center"
           height="h-[1000px] sm:h-[1200px]"
         >
           <EducationItem title="MIN 2 JEPARA" year="2016 - 2020">
@@ -133,9 +159,9 @@ const HomePage = () => {
             other supporting components.
           </EducationItem>
         </Timeline>
-        <div className="absolute top-4 right-4 size-120 rounded-full blur-[3rem] bg-indigo-500/5 "></div>
-        <div className="absolute top-1/2 -translate-y-1/2 left-0 size-150 rounded-full blur-[5rem] bg-indigo-500/8 "></div>
-        <div className="absolute bottom-4 right-0 size-120 rounded-full blur-[3rem] bg-indigo-500/5 "></div>
+        <div className="absolute top-4 right-4 size-120 rounded-full bg-indigo-500/5 blur-[3rem]"></div>
+        <div className="absolute top-1/2 left-0 size-150 -translate-y-1/2 rounded-full bg-indigo-500/8 blur-[5rem]"></div>
+        <div className="absolute right-0 bottom-4 size-120 rounded-full bg-indigo-500/5 blur-[3rem]"></div>
       </section>
       <Certifications />
       <Projects />
@@ -151,7 +177,7 @@ const HomePage = () => {
         customStyle="bg-black w-full"
         customStyleSecondary="w-10/12 px-2 xs:px-0 sm:px-13"
       >
-        <div className="w-full relative mt-30">
+        <div className="relative mt-30 w-full">
           <Animate direction="vertical">
             <ChromaGrid
               items={activitiesItem}
@@ -169,25 +195,25 @@ const HomePage = () => {
       <Footer />
 
       <div
-        className={`${isMounted ? "invisible -top-full" : "top-0 visible"} fixed left-0 bg-slate-950 size-full flex justify-center items-center z-1000 ease-in-out transition-all duration-2000`}
+        className={`${isMounted ? "invisible -top-full" : "visible top-0"} fixed left-0 z-1000 flex size-full items-center justify-center bg-slate-950 transition-all duration-2000 ease-in-out`}
       >
         <h1
-          className={`${isMountedTitle ? "mt-0 opacity-100 animate-pulse" : "-mt-50 opacity-0 animate-none"} transition-all duration-1200 font-bold font-secondary text-8xl relative ease-out`}
+          className={`${isMountedTitle ? "mt-0 animate-pulse opacity-100" : "-mt-50 animate-none opacity-0"} font-secondary relative text-8xl font-bold transition-all duration-1200 ease-out`}
         >
           Alvin
         </h1>
         <span
-          className={`${isMountedSubtitle ? "opacity-100 mt-0" : "opacity-0 mt-50"} transition-all duration-1200 text-indigo-500 text-8xl font-bold ease-out`}
+          className={`${isMountedSubtitle ? "mt-0 opacity-100" : "mt-50 opacity-0"} text-8xl font-bold text-indigo-500 transition-all duration-1200 ease-out`}
         >
           nes
         </span>
       </div>
 
       <div
-        className={`${isMountedLayer1 ? "invisible -top-full" : "visible top-0"} size-full fixed left-0 bg-slate-900 z-999 transition-all duration-1500 ease-in-out`}
+        className={`${isMountedLayer1 ? "invisible -top-full" : "visible top-0"} fixed left-0 z-999 size-full bg-slate-900 transition-all duration-1500 ease-in-out`}
       ></div>
       <div
-        className={`${isMountedLayer2 ? "invisible -top-full" : "visible top-0"} size-full fixed left-0 bg-slate-800 z-998 transition-all duration-1500 ease-in-out`}
+        className={`${isMountedLayer2 ? "invisible -top-full" : "visible top-0"} fixed left-0 z-998 size-full bg-slate-800 transition-all duration-1500 ease-in-out`}
       ></div>
     </main>
   );

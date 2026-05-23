@@ -5,8 +5,9 @@ import {
   FormField,
   FormItem,
   FormMessage,
-} from "../../components/ui/form";
-import { Input } from "../../components/ui/input";
+} from "../../../components/ui/form";
+import { Input } from "../../../components/ui/input";
+import type { FormValuesMessage } from "@/types/Form/InputMessage";
 
 interface InputItemProps {
   form: UseFormReturn<FormValuesMessage, any, FormValuesMessage>;
@@ -14,12 +15,6 @@ interface InputItemProps {
   placeholder: string;
   name: string;
 }
-
-export type FormValuesMessage = {
-  username: string;
-  email: string;
-  message: string;
-};
 
 const InputItemMessage = <T extends keyof FormValuesMessage>(
   props: InputItemProps & { name: T },
