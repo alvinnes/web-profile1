@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Alvinnes" />
+    <meta name="description" content="Simple kalkulator app" />
+    <title>Kalkulator App</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+  </head>
+  <body>
+    <h2 class="title"><i class="ph ph-calculator"></i> Kalkulator</h2>
+    <main class="container">
+      <div class="input-number">
+        <input type="text" id="calculator" disabled />
+      </div>
+      <div class="container-card">
+        <button onclick="clearCalculate('')" class="operator">C</button>
+        <button onclick="valueNumber('/')" class="operator">
+          <i class="ph ph-divide"></i>
+        </button>
+        <button onclick="valueNumber('*')" class="operator">
+          <i class="ph ph-x"></i>
+        </button>
+        <button onclick="deleteNumber('')" class="operator">
+          <i class="ph ph-backspace"></i>
+        </button>
+
+        <button onclick="valueNumber('7')">7</button>
+        <button onclick="valueNumber('8')">8</button>
+        <button onclick="valueNumber('9')">9</button>
+        <button onclick="valueNumber('-')" class="operator">
+          <i class="ph ph-minus"></i>
+        </button>
+
+        <button onclick="valueNumber('4')">4</button>
+        <button onclick="valueNumber('5')">5</button>
+        <button onclick="valueNumber('6')">6</button>
+        <button onclick="valueNumber('+')" class="operator">
+          <i class="ph ph-plus"></i>
+        </button>
+
+        <button onclick="valueNumber('1')">1</button>
+        <button onclick="valueNumber('2')">2</button>
+        <button onclick="valueNumber('3')">3</button>
+        <button onclick="valueNumber('%')" class="operator">
+          <i class="ph ph-percent"></i>
+        </button>
+
+        <button onclick="valueNumber('0')">0</button>
+        <button onclick="valueNumber(',')">,</button>
+        <button class="operator-equal" onclick="calculateNumber()">
+          <i class="ph ph-equals"></i>
+        </button>
+      </div>
+    </main>
+
+    <script src="assets/script/script.js"></script>
+  </body>
+</html>

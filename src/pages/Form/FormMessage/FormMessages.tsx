@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
 import InputItemMessage from "./InputItemMessage";
 import { Button } from "@/components/ui/button";
-import InputTextareaMessage from "./FormProjects/InputTextareaMessage";
+// import InputTextareaMessage from "./FormProjects/InputTextareaMessage";
 import ModalLoading from "@/components/ui/modal-loading";
 import ModalSuccess from "@/components/ui/modal-success";
 import Aurora from "@/components/Aurora";
@@ -121,7 +121,7 @@ const FormMessages = () => {
               name="email"
               placeholder="insert your email"
             />
-            <InputTextareaMessage form={form} />
+            {/* <InputTextareaMessage form={form} /> */}
             <Button className="w-full cursor-pointer bg-white px-8 py-5 font-semibold text-[#1d1d1d] hover:bg-slate-200">
               Submit
             </Button>

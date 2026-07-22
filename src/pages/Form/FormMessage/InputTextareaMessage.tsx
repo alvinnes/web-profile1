@@ -1,4 +1,4 @@
-import type { UseFormReturn } from "react-hook-form";
+// import type { UseFormReturn } from "react-hook-form";
 import {
   FormControl,
   FormDescription,
@@ -7,10 +7,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
-import type { FormValuesMessage } from "./InputItemMessage";
+// import type { FormValuesMessage } from "./InputItemMessage";
 
 interface InputTextareaProps {
-  form: UseFormReturn<FormValuesMessage, any, FormValuesMessage>;
+  // form: UseFormReturn<FormValuesMessage, any, FormValuesMessage>;
+  form: any;
 }
 
 const InputTextareaMessage = ({ form }: InputTextareaProps) => {

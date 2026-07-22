@@ -40,7 +40,7 @@ const GridLayout = ({
         className={`${customStyleSecondary} flex justify-between items-center mt-8`}
       >
         <Animate reverse={true}>
-          <p className="sm:text-sm text-[0.8em] text-[#808080]">6 {title}</p>
+          <p className="sm:text-sm text-[0.8em] text-[#808080]">3 {title}</p>
         </Animate>
         <Animate>
           <a

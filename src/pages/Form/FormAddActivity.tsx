@@ -4,7 +4,7 @@ import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
-import InputItemMessage from "./InputItemMessage";
+// import InputItemMessage from "./InputItemMessage";
 import { Button } from "@/components/ui/button";
 import InputTextareaMessage from "./FormMessage/InputTextareaMessage";
 import ModalLoading from "@/components/ui/modal-loading";
@@ -36,7 +36,7 @@ const FormActivity = () => {
       try {
         const request = await fetch(urlId);
         const response = await request.json();
-        setMessages(response.result[0]);
+        setActivity(response.activity[0]);
       } catch (err) {
         console.error(err);
       }
@@ -101,11 +101,11 @@ const FormActivity = () => {
               Update message information below. Changes will be saved
               immediately after you submit.
             </p>
-            <InputItemMessage
+            {/* <InputItemMessage
               form={form}
               name="title"
               placeholder="insert title activity here"
-            />
+            /> */}
 
             <InputTextareaMessage form={form} />
             <Button className="w-full cursor-pointer bg-white px-8 py-5 font-semibold text-[#1d1d1d] hover:bg-slate-200">

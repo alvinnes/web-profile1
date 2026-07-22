@@ -1,47 +1,48 @@
 import GridLayout from "@/layouts/GridLayout";
-import { type ProjectsItem } from "@/types/ProjectsItem";
+// import { type ProjectsItem } from "@/types/ProjectsItem";
+import projects from "@/datas/projects_dummy.json";
 import ProjectContent from "./ProjectContent";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import SkeletonCard from "@/components/SkeletonCard";
 
 const Projects = () => {
-  const [projects, setProjects] = useState<ProjectsItem[]>([]);
+  // const [projects, setProjects] = useState<ProjectsItem[]>([]);
   // const [hasFetched, setHasFetched] = useState(false);
   const cards = [1, 2, 3, 4, 5, 6];
   const projectContent = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          fetchProjects();
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "-400px" },
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         fetchProjects();
+  //         observer.disconnect();
+  //       }
+  //     },
+  //     { rootMargin: "-400px" },
+  //   );
 
-    if (projectContent.current) {
-      observer.observe(projectContent.current);
-    }
+  //   if (projectContent.current) {
+  //     observer.observe(projectContent.current);
+  //   }
 
-    const fetchProjects = async () => {
-      const request = await fetch(import.meta.env.VITE_END_POINT_PROJECTS);
-      const response = await request.json();
-      const projectsData = response.map((project: ProjectsItem) => ({
-        id: project.id,
-        img: project.img,
-        url: project.url,
-        title: project.title,
-        description: project.description,
-        techs: project.techs,
-        delay: project.delay,
-      }));
-      setProjects(projectsData);
-    };
+  //   const fetchProjects = async () => {
+  //     const request = await fetch(import.meta.env.VITE_END_POINT_PROJECTS);
+  //     const response = await request.json();
+  //     const projectsData = response.map((project: ProjectsItem) => ({
+  //       id: project.id,
+  //       img: project.img,
+  //       url: project.url,
+  //       title: project.title,
+  //       description: project.description,
+  //       techs: project.techs,
+  //       delay: project.delay,
+  //     }));
+  //     setProjects(projectsData);
+  //   };
 
-    return () => observer.disconnect();
-  }, []);
+  //   return () => observer.disconnect();
+  // }, []);
 
   return (
     <GridLayout
@@ -59,7 +60,7 @@ const Projects = () => {
         className="xs:w-full mt-20 grid w-full grid-cols-2 place-items-center gap-x-4 gap-y-15 pl-4 sm:w-11/12 sm:grid-cols-3"
       >
         {projects.length > 0
-          ? projects.map((project) => (
+          ? projects.map((project: any) => (
               <ProjectContent project={project} key={project.id} />
             ))
           : cards.map((index) => <SkeletonCard key={index} />)}
