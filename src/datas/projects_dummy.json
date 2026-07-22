@@ -5,7 +5,7 @@
     "url": "https://alvinnes.github.io/tic-tac-toe.github.io",
     "description": "A classic Tic Tac Toe game built with JavaScript, allowing two players to compete in a simple and fun interface.",
     "techs": ["HTML", "Tailwind Css", "React"],
-    "img": "/public/img/img-projects/project-2.png"
+    "img": "img/img-projects/project-2.png"
   },
   {
     "id": 2,
