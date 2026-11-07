@@ -43,7 +43,7 @@ const HomePage = () => {
     }, 3400);
     setTimeout(() => {
       setIsMountedLayer2(true);
-    }, 3700);
+    }, 500);
   }, [
     isMounted,
     isMountedSubtitle,
@@ -198,12 +198,12 @@ const HomePage = () => {
         className={`${isMounted ? "invisible -top-full" : "visible top-0"} fixed left-0 z-1000 flex size-full items-center justify-center bg-slate-950 transition-all duration-2000 ease-in-out`}
       >
         <h1
-          className={`${isMountedTitle ? "mt-0 animate-pulse opacity-100" : "-mt-50 animate-none opacity-0"} font-secondary relative text-8xl font-bold transition-all duration-1200 ease-out`}
+          className={`${isMountedTitle ? "mt-0 animate-pulse opacity-100" : "-mt-50 animate-none opacity-0"} font-secondary relative text-5xl font-bold transition-all duration-1200 ease-out sm:text-8xl`}
         >
           Alvin
         </h1>
         <span
-          className={`${isMountedSubtitle ? "mt-0 opacity-100" : "mt-50 opacity-0"} text-8xl font-bold text-indigo-500 transition-all duration-1200 ease-out`}
+          className={`${isMountedSubtitle ? "mt-0 opacity-100" : "mt-50 opacity-0"} text-5xl font-bold text-indigo-500 transition-all duration-1200 ease-out sm:text-8xl`}
         >
           nes
         </span>

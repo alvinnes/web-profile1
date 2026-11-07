@@ -28,7 +28,7 @@ const CertificationsContent = () => {
   // });
 
   return (
-    <div className="mt-25 grid w-full grid-cols-2 place-items-center gap-x-4 gap-y-4 sm:w-11/12 sm:grid-cols-3 sm:gap-y-15">
+    <div className="mt-25 grid w-full grid-cols-1 place-items-center gap-x-4 gap-y-4 sm:w-11/12 sm:grid-cols-3 sm:gap-y-15">
       {/* {certificatesItem.map((item) => ( */}
       <CertificateItem
         img="/img/certificate.png"
@@ -77,9 +77,9 @@ const CertificateItem = (props: CertificateItemProps) => {
       speed={1}
       chaos={0.5}
       thickness={2}
-      className="group"
+      className="group w-full"
     >
-      <div className="relative h-35 w-full rounded-xl bg-white/10 p-2 sm:h-60 sm:w-100">
+      <div className="relative h-55 w-full rounded-xl bg-white/10 p-2 sm:h-60 sm:w-100">
         <img
           // src={`/app/storage${item.certification}`}
           src={img}

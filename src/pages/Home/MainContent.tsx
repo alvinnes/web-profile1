@@ -6,9 +6,9 @@ import ProfileCard from "@/components/react-bits/ProfileCard";
 
 const MainContent = () => {
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-1/2 sm:w-10/12 w-11/12 flex justify-between items-center flex-col sm:flex-row gap-15 sm:gap-0">
+    <div className="absolute top-1/2 left-1/2 flex w-11/12 -translate-1/2 flex-col items-center justify-between gap-15 sm:w-10/12 sm:flex-row sm:gap-0">
       <TextHome />
-      <Animate delay={4.8}>
+      <Animate delay={4.3}>
         <ProfileCard
           name="Alvinnes"
           handle="alvinnes_"
@@ -21,7 +21,7 @@ const MainContent = () => {
           onContactClick={() => console.log("Contact clicked")}
         />
       </Animate>
-      <div className="flex items-center xs:gap-8 gap-6 absolute sm:-bottom-15 -bottom-20">
+      <div className="xs:gap-8 absolute -bottom-20 flex items-center gap-6 sm:-bottom-15">
         {sosmedItem.map((item, index) => (
           <Animate reverse={true} key={index}>
             <a
